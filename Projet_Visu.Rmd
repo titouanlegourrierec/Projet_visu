@@ -1,5 +1,5 @@
 ---
-title: "."
+title: "Analyse de la corrélation entre les équipements sportifs et le nombre de licenciés"
 author: " "
 output: 
   flexdashboard::flex_dashboard:
@@ -9,14 +9,7 @@ output:
   runtime: shiny
 ---
 
-
 <!-- https://titouanlegourrierec.shinyapps.io/projet_visu/ -->
-
-
-<!-- rsconnect::setAccountInfo(name='titouanlegourrierec', token='7319AF2A3409D2CA5422D00C6C109B28', secret='ZiP5VjMrdnrD2SKFIi8GcXRXG/Zl9XlwwbjnNKgD') -->
-<!-- setwd("/Users/titouanlegourrierec/Desktop/Shiny_Projet_Visu") -->
-<!-- rsconnect::deployApp() -->
-
 
 ```{r setup, include=FALSE}
 # Chargement des bibliothèques
@@ -161,6 +154,7 @@ popup_content <- function(properties, object) {
 <!-- Première page -->
 # **Présentation du projet** {data-icon="fa-home"}
 
+Pour accéder aux autres projets : https://nicolassutton-charani.shinyapps.io/visu_project_manager_2024/
 
 <!-- Première ligne -->
 ### **Présentation du projet :**
@@ -230,7 +224,7 @@ ui <- fluidPage(
       downloadButton("downloaddata", "Télécharger les données", class = "download-button") # Bouton de téléchargement
     ),
     div(class = "col-xs-6 text-right",
-      actionButton("githublink", label = icon("github"), class = "github-button", onclick = "window.open('https://github.com/titouanlegourrierec/MissionR-D')"),
+      actionButton("githublink", label = icon("github"), class = "github-button", onclick = "window.open('https://github.com/titouanlegourrierec/Projet_Visu')"),
     )
   )
 )
@@ -251,8 +245,6 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 
 ```
-
-
 
 <!-- ################################################################################################## -->
 
@@ -276,7 +268,7 @@ Le projet vise à étudier la corrélation entre le nombre de licenciés et le n
 
 En analysant ces données <strong>au niveau départemental</strong>, l'objectif est d'aider le gouvernement à <strong>prendre des décisions éclairées sur le financement des infrastructures sportives, afin de soutenir la pratique sportive dans les différentes régions.</strong> <br><br>
 
-Le projet vise également à étudier <strong>l'évolution des licences</strong>, ainsi que la <strong>répartition par âge et par sexe</strong> des licenciés. En examinant ces aspects en plus de la corrélation entre le nombre de licenciés et le nombre d'infrastructures sportives au niveau départemental, l'objectif est de fournir des informations détaillées pour guider les décisions de financement et d'investissement dans le sport, en tenant compte des <strong>variations démographiques</strong> et des <strong>tendances dans la pratique sportive.</strong> <br><br><br><br>
+Le projet vise également à étudier <strong>l'évolution des licences</strong>, ainsi que la <strong>répartition par âge et par sexe</strong> des licenciés. En examinant ces aspects en plus de la corrélation entre le nombre de licenciés et le nombre d'infrastructures sportives au niveau départemental, l'objectif est de fournir des informations détaillées pour guider les décisions de financement et d'investissement dans le sport, en tenant compte des <strong>variations démographiques</strong> et des <strong>tendances dans la pratique sportive.</strong> <br><br><br><br><br><br><br><br>
 </p>
 
 ![Source : Europe1](https://resize-europe1.lanmedia.fr/img/var/europe1/storage/images/media/images/fe-de-s-01-1/59787261-1-fre-FR/Fe-de-s-01-1.jpg){width=100%}
@@ -619,7 +611,7 @@ valueBox(format(round((sum/sums)*100), big.mark = " "), color = "#CD8EA6")
 
 ## Column {data-width="600"}
 
-### '
+### Carte de la france : <strong>(les départements sont cliquables)</strong>
 
 
 ```{r Carte Leaflet test zoom}
@@ -784,7 +776,43 @@ plot_ly(data = carte_sport_filtré,
 
 
 
+<!-- ################################################################################################## -->
 
+
+
+
+
+# Conclusion {data-icon="fa-stop"}
+
+### Conclusion
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; font-family: "Roboto", sans-serif; border-bottom: 2px solid #ccc;">
+  <div>
+    <div style="font-size: 36px; color: #333; font-weight: bold;">Conclusion :</div>
+    <div style="font-size: 30px; color: #333;">Analyse de la corrélation entre les équipements sportifs et le nombre de licenciés</div>
+  </div>
+  <div style="font-family: "Roboto", sans-serif; color: #999; text-align: right;">
+    <div style="margin-bottom: 3px;">LE GOURRIEREC Titouan</div>
+    <div style="margin-bottom: 3px;">BERTIEAUX Laura</div>
+    <div style="margin-bottom: 3px;">DUMAS Paul</div>
+    <div style="margin-bottom: 3px;">HOLLECOU Enora</div>
+  </div>
+</div>
+<hr style="margin-top: 0px; border: none; border-top: 1px solid #ccc;">
+<p style="font-family: "Open Sans", sans-serif; font-size: 22px; color: #444; text-align: justify; line-height: 1.6;">
+En conclusion, ce projet représente une réponse stratégique et proactive aux changements profonds observés dans les habitudes sportives des Français, induits par la crise sanitaire liée à la pandémie de Covid-19. En mettant en place un <strong>tableau de bord exhaustif</strong>, nous offrons au gouvernement français un instrument puissant pour <strong>ajuster ses politiques d'investissement dans le domaine sportif</strong>, répondant ainsi aux besoins évolutifs de la population. <br><br>
+
+L'analyse approfondie des données sur <strong>les infrastructures sportives</strong>, <strong>les licences</strong>, ainsi que <strong>les tendances démographiques et de pratique sportive</strong>, permet d'identifier <strong>les secteurs prioritaires nécessitant de nouveaux investissements</strong>. En outre, cette démarche favorise une répartition équitable des ressources, garantissant un accès optimal aux infrastructures sportives pour tous les citoyens, quel que soit leur âge, leur sexe, ou leur lieu de résidence. <br><br>
+
+En fournissant des outils de visualisation avancés et des données actualisées, ce projet vise à <strong>accompagner le gouvernement dans sa mission de promouvoir une culture sportive dynamique et inclusive</strong>. En effet, une prise de décision éclairée, basée sur des données tangibles et des analyses précises, est essentielle pour soutenir efficacement la pratique sportive à tous les niveaux de la société.<br><br>
+
+En somme, ce tableau de bord constitue un outil essentiel pour <strong>anticiper les besoins futurs</strong>, <strong>favoriser l'épanouissement des pratiques sportives</strong>, et contribuer ainsi au bien-être général et à la santé de la population française. <strong>En adaptant nos politiques d'investissement en fonction des évolutions observées, nous œuvrons collectivement à bâtir un avenir où le sport demeure un pilier essentiel de notre société, accessible à tous et vecteur de cohésion sociale.</strong>
+</p>
+
+
+
+
+<!-- ################################################################################################## -->
 
 
 
@@ -803,7 +831,7 @@ plot_ly(data = carte_sport_filtré,
 ### licences sportives (INJIEP) : https://injep.fr/mentions-legales/
 
 ![](./images/INJIEP.png)
-
+<!-- ####################################################################### -->
 
 
 

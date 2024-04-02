@@ -5,6 +5,6 @@ account: titouanlegourrierec
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11201719
-bundleId: 8381613
+bundleId: 8387444
 url: https://titouanlegourrierec.shinyapps.io/projet_visu/
 version: 1
